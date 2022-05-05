@@ -116,12 +116,13 @@ Given below are the PFD circuit..
 ![pfd](https://user-images.githubusercontent.com/55539862/166933171-a3bd82c0-e283-4fa2-8894-2d8dac713fac.png)
 
 
+
 _PFD Prelayout Simulation Results_
 
 #### Charge Pump Circuit
 The charge pump circuit with modification considering the leakage current is  
 ![CP_circuit](https://user-images.githubusercontent.com/78468534/127782045-6a5b2df2-13fd-4456-9337-6b2af6604d05.jpeg)  
-and the spice file is  
+
 
 
 
@@ -145,12 +146,11 @@ _VCO Prelayout Simulation Result_
 
 #### PLL Circuit
 The final PLL circuit is the joining of all the other blocks. However in addition to individual simulations, the PLL as a whole also need to be simulated. For this we create the spice file by calling the individual circuits as subcircuits.  
-![PLL_spice](https://user-images.githubusercontent.com/78468534/127783331-469f1c70-0ca4-421c-a20b-e7afc3ff4296.jpeg)
+
 
 *Pre-layout Simulation*  
-![PLL_prelay_sim](https://user-images.githubusercontent.com/78468534/127783351-b3ff364a-3691-485e-b655-543d0290a1a2.jpeg)
-![PLL_prelay_graph](https://user-images.githubusercontent.com/78468534/127783355-32111d1c-00c2-4697-a09f-596713cf9852.jpeg)  
-_PLL simulation results_
+![pll](https://user-images.githubusercontent.com/55539862/166944507-e437d827-7cbc-47d5-8a25-968ed1d97124.png)
+
 
 ---------
 
