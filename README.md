@@ -62,43 +62,18 @@ Design flow of the PLL IC has the following steps:
 1. Specifications of the IC
 2. SPICE level circuit development
 3. Pre-layout simulation
-4. Layout development
-5. Parastic Extraction
-6. Post-layout simulation
-7. Tapeout
+
 
 #### Tool Setup
 
-##### SKY130 PDK
-The SKY130 are set of 180nm-130nm technology based process nodes and PDKs(Process Design Kits), provided for free. The content provided in this pdk include:
-* io-input-output
-* pr-primitives
-* sc-standard cell
-* hd-high density
-* hs-high speed
-* lp-low power
-* hdll-high density low leakage
+##### Synopsys Custom Design Platform
+Custom Compiler provides a highly productive environment for design entry and simulation, with strong features for mixed-signal design, debug, simulation
+management, analysis, and reporting.
+###### PrimeWave Design Environment
+PrimeWave Design Environment is a comprehensive and flexible environment for simulation setup and analysis of analog, RF, mixed-signal design, custom-digital and memory designs within the Synopsys Custom Design Platform.
 
-##### NGSPICE
-The ngspice is an open-source electronic circuit simulator widely used in ciruit design and analog VLSI domain. Ngspice is very simple to get in linux systems. The following terminal command can be used to install it in a linux system.
-
-            sudo apt-get install ngspice
-
-##### Magic
-Magic is an open-source VLSI layout tool. It is mainly used for making the layout and the parasitic extraction which follows. For SKY130, the latest version of magic needs to be installed and this can be done by directly compiling and "making" the source code. Terminal commands for the same are given below.
-
-           sudo apt-get update && sudo apt-get upgrade      //update OS
-           git clone git://opencircuitdesign.com/magic      //clone magic repository
-           sudo apt-get install csh                         //install csh shell if it is absent
-           cd magic
-           ./configure                                      //run configure script
-           make                                             //run make command to compile
-           sudo make install                                //install magic
-
-
-Additionally, many of the files used in this workshop where provided through a github repository.  
-![git_lakshmi](https://user-images.githubusercontent.com/78468534/127781783-f22154e9-a5ff-4eae-8128-38edf4433ac5.jpeg)
-
+###### PrimeSim HSPICE
+PrimeSim HSPICE is the accurate circuit simulator and offers foundries-certified MOS device models with state-of-theart simulation and analysis algorithms. It is used for building digital MOSFET circuits using 28nm technology.
 
 ---------
 ## Circuit Design and Simulation
@@ -132,12 +107,13 @@ The PFD circuit is designed such that, square(digital) signals with pulse width 
 Given below are the PFD circuit..  
 ![PFD_circuit](https://user-images.githubusercontent.com/78468534/127782010-b21f76ed-6bed-4406-bfd0-2c5fca9838ac.jpeg)
 
-and the spice file.  
-![PFD_spice](https://user-images.githubusercontent.com/78468534/127782024-c29ba837-832e-431c-b468-786f3979b9eb.jpeg)
+ 
+
+
 
 *Pre-layout Simulation*  
 
-![PD_prelay_sim](https://user-images.githubusercontent.com/78468534/127782705-2d819680-ab57-4769-8084-2271b544e5b7.jpeg) ![PFD_prelay_graph](https://user-images.githubusercontent.com/78468534/127783258-83a021c6-6241-43df-9a3f-a9cfcb31500e.jpeg)
+![pfd](https://user-images.githubusercontent.com/55539862/166933171-a3bd82c0-e283-4fa2-8894-2d8dac713fac.png)
 
 
 _PFD Prelayout Simulation Results_
@@ -146,12 +122,12 @@ _PFD Prelayout Simulation Results_
 The charge pump circuit with modification considering the leakage current is  
 ![CP_circuit](https://user-images.githubusercontent.com/78468534/127782045-6a5b2df2-13fd-4456-9337-6b2af6604d05.jpeg)  
 and the spice file is  
-![CP_spice](https://user-images.githubusercontent.com/78468534/127782052-9781fe6c-94e5-4cf3-8157-677d27ed436d.jpeg)
+
+
 
 *Pre-layout Simulation*  
+![CP](https://user-images.githubusercontent.com/55539862/166932949-e21f6d8b-80f9-4b10-9f90-038fbd971856.png)
 
-
-![CP_prelay_sim](https://user-images.githubusercontent.com/78468534/127782713-b5eaa388-ccfe-4447-8053-d392bf38309b.jpeg) 
 _CP Prelayout Simulation Result_
 
 #### VCO Circuit
@@ -161,13 +137,11 @@ The VCO circuit is realised with a current starved 3 inverter circuit. Using thi
 The circuit is:  
 ![VCO_circuit](https://user-images.githubusercontent.com/78468534/127782614-ed6b8289-cf29-4cd9-bfe7-078176fe6c26.jpeg)
 
-and the spice model is  
-![VCO_spice](https://user-images.githubusercontent.com/78468534/127782626-a74a43c2-fc10-4d88-b3e6-d36360bbb180.jpeg)
 
 *Pre-layout Simulation*  
-
-![VCO_prelay_sim](https://user-images.githubusercontent.com/78468534/127782718-f6cbddc3-54aa-4047-8ff8-c0fef91b9921.jpeg)  
+ 
 _VCO Prelayout Simulation Result_
+![VCO](https://user-images.githubusercontent.com/55539862/166933100-1a0f26af-1e69-477d-a64e-75740f84ede0.png)
 
 #### PLL Circuit
 The final PLL circuit is the joining of all the other blocks. However in addition to individual simulations, the PLL as a whole also need to be simulated. For this we create the spice file by calling the individual circuits as subcircuits.  
@@ -179,67 +153,7 @@ The final PLL circuit is the joining of all the other blocks. However in additio
 _PLL simulation results_
 
 ---------
-## Layout Design
-Layout Design is the part in which the circuit is converted to polygons which can be made into GDSII format. Here layout design is done using the Magic tool. The layouts are saved with ".mag" extensions. These files can be opened with command:
 
-                                          magic -T <technology_file_name> <layout_file_name>
-
-Shown below are examples of terminal commands:  
-![Magic_commands](https://user-images.githubusercontent.com/78468534/127783264-96276c70-a604-4f9d-a261-3f6b7b3dc750.jpeg)
-
-
-The layouts for each circuits are given below:
-
-![FD_layout](https://user-images.githubusercontent.com/78468534/127783517-afba527a-d7b5-42e4-8bd7-bbd58d6ca425.jpeg)  
-_FD Layout_
-
-![PFD_layout](https://user-images.githubusercontent.com/78468534/127783518-8e061e34-1910-452a-bd0d-c9ccaf20e062.jpeg)  
-_PFD Layout_
-
-![CP_layout](https://user-images.githubusercontent.com/78468534/127783521-f3857e3b-5bdc-4708-b0c7-dc6f8e644cb6.jpeg)  
-_CP Layout_
-
-![VCO_layout](https://user-images.githubusercontent.com/78468534/127783524-5d189d3e-773a-497f-a63e-3962dd442a0b.jpeg)  
-_VCO Layout_
-
-After making each layout, these layouts can be instantiated to make the final PLL layout. This is done using _File > Place Instance_ option.  
-![PLL_layout](https://user-images.githubusercontent.com/78468534/127783571-8c9939d1-c883-4e21-a04e-97d139257e1e.jpeg)  
-_PLL Layout_
-
-
----------
-## Parasitic Extraction and PLS
-
-Parasitic extraction is the process of extracting the capacitance effects(parasitics) of the circuit realised in the layout. This can be done using the magic tool. The magic tool can do this using _extract all_ command. This can further be converted to a spice file using command _ext2spice_.
-
-Given below is an example spice file of PFD generated in such a way.  
-![Spice_generated _by_magic](https://user-images.githubusercontent.com/78468534/127806679-9301b011-1f09-4150-a614-46c224a837aa.jpeg)  
-For this example around 43 capacitance have been extracted, the largest capacitance between Vcc and GND.
-
-
-This spice file is used to perform the post-layout simulation.
-
-![Postlay_sim](https://user-images.githubusercontent.com/78468534/127806827-8bbbbe93-b09a-42f9-949f-270688a8c93b.jpeg)  
-The above picture shows post-layout simulation results of PFD spice after parasitic extraction.
-
-The parasitic extraction and post-layout simulation are steps for ensuring fuctionality. The GDS file generation can however be done after creating the layout with magic tool.
-
-
----------
-## Tapeout
-
-GDS file can be created using the option _File > Write GDS_. Although the GDSII file is considered the final format which is sent for fabrication, the IC designed cannot be send as such. The design need to be "prepared" for fabrication process. This preparation is called the tapeout.
-Any addition which helps connect the wafer to outside world would come under this preparation. This may include adding I-O ports, UART and other peripherals. Efabless, provides a free "shuttle" which will carry our design . This is the Caravel SoC.
-  
-![Caravel_soc](https://user-images.githubusercontent.com/78468534/127822463-cd54b92b-b178-4f99-913d-33ef7c995c53.jpeg)  
-_Caravel SoC Structure(as provided in [efabless.com](#https://efabless.com))_
-
-Within the design for caravel, the IP can be added using _Place Instance_ option within the magic tool. After placing, the inputs and outputs need to be connected to the carvel template.  
-
-![PLL_in_caravel](https://user-images.githubusercontent.com/78468534/127823532-b9664a56-5e88-4bdb-b81d-7aec36127d15.jpeg)  
-Adding PLL to caravel
-
----------
 ## Acknowledgement
 * [Kunal Ghosh](https://github.com/kunalg123), Co-founder,VSD
 * [Lakshmi S](https://github.com/lakshmi-sathi), Instructor - [8x PLL Clock Multiplier IP](https://github.com/lakshmi-sathi/avsdpll_1v8)
