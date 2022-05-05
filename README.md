@@ -1,6 +1,6 @@
 # PLL
 
-# Phase Locked Loop IC Design
+# Phase Locked Loop IC Design using 28nm Technology with Synopsys Tool
 
 
 VSD workshop - Phase Locked Loop(PLL) IC Design!
@@ -17,9 +17,9 @@ The following repo is the documentation of learnings and activities done through
 * [Tools Overview and Design Flow](#tools-overview-and-design-flow)
   * [Design Flow](#design-flow)
   * [Tool Setup](#tool-setup)
-   * [SKY130 PDK](#sky130-pdk)
-   * [NGSPICE](#ngspice)
-   * [Magic](#magic)
+   * [Synopsys Custom Design Platform](#synopsyscustom)
+   * [Synopsys Primewave](#primewave)
+   * [PrimeSim HSPICE](#hspice)
 * [Circuit Design and Simulation](#circuit-design-and-simulation)
   * [Specifications](#specification)
   * [Frequency Divider Circuit](#frequency-divider-circuit)
@@ -27,9 +27,7 @@ The following repo is the documentation of learnings and activities done through
   * [Charge Pump Circuit](#charge-pump-circuit)
   * [VCO Circuit](#vco-circuit)
   * [PLL Circuit](#pll-circuit)
-* [Layout Design](#layout-design)
-* [Parasitic Extraction and PLS](#parasitic-extraction-and-pls)
-* [Tapeout](#tapeout)
+
 * [Acknowledgement](#acknowledgement)
 
 
