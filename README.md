@@ -3,11 +3,9 @@
 # Phase Locked Loop IC Design
 
 
-![Wokshop](https://user-images.githubusercontent.com/78468534/127773666-6942ba09-4dd8-488b-af30-fa7b3ed6179b.jpeg)
-
 VSD workshop - Phase Locked Loop(PLL) IC Design!
 
-The following repo is the documentation of learnings and activities done throughout a 2-day workshop on PLL IC Design with SKY130 Technology conducted by VLSI sytem design.
+The following repo is the documentation of learnings and activities done throughout a 2-day workshop on PLL IC Design with Synopsys Tool conducted by VLSI sytem design.
 
 
 # *Contents*
@@ -122,17 +120,11 @@ A simple 2x frequency divider circuit can be obtained by using a single D-flipfl
 This simple circuit can be drawn as:  
 ![FD_circuit](https://user-images.githubusercontent.com/78468534/127781480-b09756aa-a4ce-48e4-8164-4fad67cf1f7d.jpeg)
 
-Writing this circuit as a spice file:  
-![FD_spice](https://user-images.githubusercontent.com/78468534/127781792-3465c9c8-3245-4b77-ac2f-e5bde8e3e9cc.jpeg)
 
 *Pre-layout Simulation*  
-The pre-layout simulation of spice model can be done using the command:
-
-                              ngspice <spice_file_name>
+![Screenshot (369)](https://user-images.githubusercontent.com/55539862/166863633-72a58662-28c2-45b3-a321-88f870ac8c79.png)
 
 
-![FD_prelay_sim](https://user-images.githubusercontent.com/78468534/127782690-bc1b6585-a9a2-4702-975f-15f574a865cc.jpeg)
-_FD Prelayout Simulation Result_
 
 #### PFD Circuit
 The PFD circuit is designed such that, square(digital) signals with pulse width proportional to phase difference are produced at output. Also two different outputs are used to distinguish between cases when output is leading reference signal and lagging behind reference signal.
