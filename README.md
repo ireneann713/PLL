@@ -80,7 +80,7 @@ PrimeSim HSPICE is the accurate circuit simulator and offers foundries-certified
 As mentioned in the design flow, every design starts with determining the specifications. The specifications for PLL to be designed are:
 
 * Corner - 'TT' (_Typical-Typical_)
-* Supply Voltage - 1.8V
+* Supply Voltage - 1.5V
 * Room Temperature
 * VCO mode and PLL mode
 * Input F<sub>min</sub>=5Mhz; F<sub>max</sub>=12.5Mhz
@@ -94,9 +94,14 @@ This simple circuit can be drawn as:
 ![FD_circuit](https://user-images.githubusercontent.com/78468534/127781480-b09756aa-a4ce-48e4-8164-4fad67cf1f7d.jpeg)
 
 
-*Pre-layout Simulation*  
-![Screenshot (369)](https://user-images.githubusercontent.com/55539862/166863633-72a58662-28c2-45b3-a321-88f870ac8c79.png)
+*Pre-layout Simulation* 
 
+![FD](https://user-images.githubusercontent.com/55539862/168445267-7f9212dc-5cf1-40a9-9c5f-88b6a640f54c.png)
+
+*Simulation Result*
+
+
+![FD_RESULT](https://user-images.githubusercontent.com/55539862/168445355-5e2cedd8-b259-4882-af9b-9a148beafeed.png)
 
 
 #### PFD Circuit
@@ -125,9 +130,13 @@ The charge pump circuit with modification considering the leakage current is
 
 
 *Pre-layout Simulation*  
-![CP](https://user-images.githubusercontent.com/55539862/166932949-e21f6d8b-80f9-4b10-9f90-038fbd971856.png)
+![CP](https://user-images.githubusercontent.com/55539862/168445459-69d45eac-e212-43e0-b3b8-85fa9450b757.png)
+
 
 _CP Prelayout Simulation Result_
+![CP_result](https://user-images.githubusercontent.com/55539862/168445399-6d213131-987c-422c-9b4b-369a9a206550.png)
+
+
 
 #### VCO Circuit
 The VCO circuit is realised with a current starved 3 inverter circuit. Using this method, the delay of inverter can be controlled and thereby the frequency of output clock.
