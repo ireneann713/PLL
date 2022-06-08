@@ -162,8 +162,9 @@ The final PLL circuit is the joining of all the other blocks. However in additio
 
 
 *Pre-layout Simulation*  
-![pll](https://user-images.githubusercontent.com/55539862/166944507-e437d827-7cbc-47d5-8a25-968ed1d97124.png)
-
+![image](https://user-images.githubusercontent.com/55539862/172663830-cab1ffa9-da9c-46e9-8898-6b6de288301e.png)
+_PLL Prelayout Simulation Result_
+![image](https://user-images.githubusercontent.com/55539862/172663656-d9111715-30aa-42d8-aaef-ec3d6e651107.png)
 
 ---------
 
