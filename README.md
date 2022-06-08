@@ -121,6 +121,7 @@ Given below are the PFD circuit..
 
 
 _PFD Prelayout Simulation Results_
+![image](https://user-images.githubusercontent.com/55539862/172559634-394c73dc-76d7-4a7c-aff5-5d0a8423022a.png)
 
 #### Charge Pump Circuit
 The charge pump circuit with modification considering the leakage current is  
