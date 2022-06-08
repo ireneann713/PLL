@@ -115,8 +115,9 @@ Given below are the PFD circuit..
 
 
 *Pre-layout Simulation*  
+![image](https://user-images.githubusercontent.com/55539862/172559878-6e3f265b-4088-42f5-afa8-8ffb31a35a87.png)
 
-![pfd](https://user-images.githubusercontent.com/55539862/166933171-a3bd82c0-e283-4fa2-8894-2d8dac713fac.png)
+
 
 
 
