@@ -148,8 +148,12 @@ The circuit is:
 
 *Pre-layout Simulation*  
  
+
+![image](https://user-images.githubusercontent.com/55539862/172544874-4c47a9d7-0995-44aa-aa5b-198da15ca8e7.png)
+
 _VCO Prelayout Simulation Result_
-![VCO](https://user-images.githubusercontent.com/55539862/166933100-1a0f26af-1e69-477d-a64e-75740f84ede0.png)
+![image](https://user-images.githubusercontent.com/55539862/172545094-5487395c-14c9-44a1-8731-61b81269c88e.png)
+
 
 #### PLL Circuit
 The final PLL circuit is the joining of all the other blocks. However in addition to individual simulations, the PLL as a whole also need to be simulated. For this we create the spice file by calling the individual circuits as subcircuits.  
